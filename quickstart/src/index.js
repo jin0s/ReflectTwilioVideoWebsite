@@ -1,7 +1,6 @@
 'use strict';
 
 var Video = require('twilio-video');
-
 var activeRoom;
 var previewTracks;
 var identity;
@@ -55,7 +54,9 @@ $.getJSON('/token', function(data) {
     log("Joining room '" + roomName + "'...");
     var connectOptions = {
       name: roomName,
-      logLevel: 'debug'
+      logLevel: 'debug',
+      video: {width : 1080,
+              height: 1980}
     };
 
     if (previewTracks) {
@@ -129,7 +130,11 @@ function roomJoined(room) {
       previewTracks.forEach(function(track) {
         track.stop();
       });
-      previewTracks = null;
+      previewTracks = createLocalTracks({
+        audio: true,
+        video: { width: 300,
+                height: 600 },
+      });
     }
     detachParticipantTracks(room.localParticipant);
     room.participants.forEach(detachParticipantTracks);

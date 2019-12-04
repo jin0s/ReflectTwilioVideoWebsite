@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twilio Video - Video Quickstart</title>
-  <link rel="stylesheet" href="index.css">
+  <title>REFLECT</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css">
+
 </head>
 <body>
-    <h1>Welcome to Twilio Video quickstart</h1>
-    <p>For more examples click <a href='/examples'>here</a></p>
-<div id="remote-media"></div>
-<div id="controls">
-  <div id="preview">
-    <p class="instructions">Hello Beautiful</p>
-    <div id="local-media"></div>
-    <button id="button-preview">Preview My Camera</button>
-  </div>
-  <div id="room-controls">
-    <p class="instructions">Room Name:</p>
-    <input id="room-name" type="text" placeholder="Enter a room name" />
-    <button id="button-join">Join Room</button>
-    <button id="button-leave">Leave Room</button>
-  </div>
-  <div id="log"></div>
-</div>
+	<div class="topnav">
+		<a href="http://localhost:1234/index.html">Home</a>
+		<a href="http://localhost:1234/video.html">Class Videos</a>
+		<a href="http://localhost:1234/camera.html">Solo Workouts</a>
+		<a href="http://localhost:1234/scheduling.html">Appointments</a>
+		<a class="active">Video Chat</a>
+	</div>
+    <h1 class="title">REFLECT</h1>
+		<div class="row">
+			<div id="room-controls" class="room-controls col-md-6">
+				<input id="room-name" type="text" placeholder="Enter a room name" />
+				<button id="button-join" class="button button-join">Join Room</button>
+				<button id="button-leave" class="button button-leave">Leave Room</button>
+			</div>
+			<div id="log" class="log col-md-6"></div>
+		</div>
+		<br>
+		<div class="row">
+				<div id="controls" class="col-md-6">
+						<div id="local-media" class="local-media">
+						</div>
+						<button id="button-preview" class="button button-preview">Preview My Camera</button>
+
+				</div>
+				<div class="col-md-6">
+
+					<div id="remote-media"></div>
+				</div>
+		</div>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="index.js"></script>
